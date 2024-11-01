@@ -1,17 +1,20 @@
 import { dataourworks } from "./dataOurWorks";
-import { useEffect, useState } from "react";
-import LoaderPage from './LoaderPage';
+import { useState, useRef } from "react";
+import { useGSAP } from '@gsap/react';
+import gsap from "gsap";
 import './App.css';
 
 
 function OurWorks() {
 
-const [stateLoader, setStateLoader] = useState(true);
+const containerOurWorks = useRef();
 
-      useEffect(() => {
-    const timer = setTimeout(() => setStateLoader(false), 1500);
-    return () => clearTimeout(timer)
-      }, [])
+useGSAP(() => {
+    gsap.from('.previousExample', { delay: 1, duration: 2, x: -500, ease: "power2.InOut" });
+    gsap.from('.nextExample', { delay: 1, duration: 2, x: 500, ease: "power2.InOut" });
+    gsap.from('img', { delay: 1, duration: 2, y: 500, ease: "power2.InOut" });
+    gsap.from('p', { delay: 1, duration: 2, y: -500, ease: "power2.InOut", opacity: 0 });
+        })
 
   const [example, setExample] = useState(0);
     const { id, description, image } = dataourworks[example];
@@ -38,15 +41,14 @@ const [stateLoader, setStateLoader] = useState(true);
 
     return (<div>
          <div className="background">
-    {stateLoader && <LoaderPage />}
-        <div className="container">
-            <button className="previousExample" onClick={previousExample}>Previous</button>
-            <img src={image} width="400px" alt="pict" />
-            <button className="nextExample" onClick={nextExample}>Next</button>
+        <div  className="container">
+            <button ref={containerOurWorks} className="previousExample" onClick={previousExample}>Previous</button>
+            <img ref={containerOurWorks} src={image} width="400px" alt="pict" />
+            <button ref={containerOurWorks} className="nextExample" onClick={nextExample}>Next</button>
         </div>
 
         <div className="container">
-            <p>{description}</p> 
+            <p ref={containerOurWorks}>{description}</p> 
         </div>
 </div>
         

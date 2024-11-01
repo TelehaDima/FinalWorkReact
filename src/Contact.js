@@ -1,27 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from "gsap";
+import { useRef } from 'react';
 import './App.css';
-import LoaderPage from './LoaderPage';
+
 
 
 function Contact() {
 
-    const [stateLoader, setStateLoader] = useState(true);
+    const containerContact = useRef();
 
-      useEffect(() => {
-    const timer = setTimeout(() => setStateLoader(false), 1500);
-    return () => clearTimeout(timer)
-  }, [])
-
+useGSAP(() => {
+    gsap.from('.contact', { delay: 1, duration: 2, y: -500, ease: "power2.InOut", opacity: 0 });
+        })
 
     return (
         <div className='background'>
-            {stateLoader && <LoaderPage />}
     
 <div>
-    <h1 className='contact'>Meet Us</h1>
-    <p className='contact'>✆ +48111111111</p>
-    <p className='contact'>📧 example@gmail.com</p>
-    <p className='contact'>🏡 Example street 8, 108 </p>
+    <h1 ref={containerContact} className='contact'>Meet Us</h1>
+    <p ref={containerContact} className='contact'>✆ +48111111111</p>
+    <p ref={containerContact} className='contact'>📧 example@gmail.com</p>
+    <p ref={containerContact} className='contact'>🏡 Example street 8, 108 </p>
 </div>
             
 </div>
