@@ -1,44 +1,42 @@
-import { useState, useRef } from 'react';
-import { data } from './data';
-import Cars from './Cars';
-import Buttons from './Buttons';
+import Cart from "./Components/Cart/Cart";
+import AllCategories from "./Components/Filter/AllCategories";
+import Shirts from "./Components/ShirtsComponents/Shirts";
+import './App.css';
+import Favorite from "./Components/Favorites/Favorite";
+import { useRef } from "react";
 import { useGSAP } from '@gsap/react';
 import gsap from "gsap";
-import './App.css';
 
-function Shop() {
-
-  const containerShop = useRef();
-
-useGSAP(() => {
-    gsap.from('.back,.buttonsShop', { delay: 1, duration: 2, y: -500, ease: "power2.InOut" });
+function AppNew() {
+    const containerShop = useRef();
+    
+    useGSAP(() => {
+    gsap.from('.AppNew', { delay: 1, duration: 2, y: 500, ease: "power2.InOut" });
         })
-  
-  const [cars, setCars] = useState(data)
-  
-  const chosenPrints = (searchTerm) => {
-    const newPrints = data.filter(element => element.searchTerm === searchTerm);
-    setCars(newPrints);
-  }
 
-  return (
-    <div className='background'>
-      <div>
-      <div className='cont'>
-        <h2 ref={containerShop} className='back'>Choose your print</h2>
-        </div>
-        
-        <div ref={containerShop} className='buttonsShop'>
-        <Buttons  filteredPrints={chosenPrints} />
+    return (
+        <div>
+        <h2 className="shopnewh2">Choose your print</h2>
+            <div ref={containerShop} className="AppNew">
+                
+        <div className="block-category">
+        <AllCategories/>            
         </div>
 
-        <div ref={containerShop} className='carsShop'>
-        <Cars prints={cars} />
+        <div className="block">
+        <Favorite/>
         </div>
 
+        <div className="block">
+        <Cart />
         </div>
-    </div>
-  );
+
+        <div className="block">
+        <Shirts /> 
+        </div>
+        </div>
+</div>
+
+            )
 }
-
-export default Shop;
+export default AppNew;

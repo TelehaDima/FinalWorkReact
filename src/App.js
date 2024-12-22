@@ -15,6 +15,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from "gsap";
 import { useRef } from 'react';
 
+
 function App() {
   const containerMain = useRef();
 
@@ -34,17 +35,21 @@ useGSAP(() => {
    
 
     <nav ref={containerMain}>
-      <Link to="/about" className="link">About</Link>      
-      <Link to="/shop" className="link">Shop</Link>
+      <Link to="/about" className="link">About</Link> 
+       <Link to="/shop" className="link">Shop</Link>
+      {/* <Link to="/shop" className="link">Shop</Link> */}
       <Link to="/ourworks" className="link">Our works</Link>
       <Link to="/contact" className="link">Contact Us</Link>
+     
     </nav>
     
         <Routes>
-      <Route path="/about" element={<About/>} />      
+      <Route path="/about" element={<About />} /> 
       <Route path="/shop" element={<Shop/>} />
+      {/* <Route path="/shop" element={<Shop/>} /> */}
       <Route path="/ourworks" element={<OurWorks/>} />
-      <Route path="/contact" element={<Contact/>} />
+      <Route path="/contact" element={<Contact />} />
+      
       
 
     </Routes>

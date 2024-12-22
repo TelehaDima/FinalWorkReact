@@ -1,4 +1,99 @@
+.AppNew{
+  display: flex;
+  justify-content: space-around;
+  background-color: grey;
+  
+}
+.block{
+  background-color: black;
+  padding: 20px;
+  color: bisque;
+}
+.block-category{
+  background-color: black;
+  padding: 20px;
+  color: bisque;
+}
+.picture{
+  width: 330px;
+  height: 330px;
+}
+.shopnewh2{
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  margin: 0px;
+  color: #fff;
+}
 
+.categoryButton:hover {
+  background-color: #fdeb6b;
+  color: black;
+  ;
+}
+.categoryButtonSelected {
+  background-color: green;
+}
+p{
+  color: #fff;
+  margin: 0px;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 25px;
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
+}
+.icon-bin{
+  width: 20px;
+  margin-bottom: 25px;
+}
+.buttonBlock{
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bebas Neue", sans-serif;
+}
+.btn-new {
+  font-weight: bold;
+  font-size: large;
+  width: 60px;
+  border-radius: 10px;
+  color: black;
+  transition: .2s linear;
+  background: white;
+}
+
+.btn-new:hover {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #3C82F8;
+}
+.btn-new-add-favorite{
+  padding: 10px;
+  font-weight: bold;
+  font-size: large;
+  border-radius: 10px;
+  color: black;
+  transition: .2s linear;
+  background: red;
+}
+.btn-new-add-favorite:hover {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px red;
+}
+.btn-new-add-cart{
+  padding: 10px;
+  font-weight: bold;
+  font-size: large;
+  border-radius: 10px;
+  color: black;
+  transition: .2s linear;
+  background: orangered;
+}
+.btn-new-add-cart:hover {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px orangered;
+}
+span{
+  display: flex;
+  justify-content: center;
+  margin-top: -7px;
+}
 /* -----SHOP-------- */
 .products {
   display: flex;
@@ -23,7 +118,7 @@ body {
 
 .cont {
   display: flex;
-  justify-content: center;
+  justify-content: center
 }
 
 video {
@@ -76,6 +171,7 @@ font-size: 40px;
 
 button {
 margin: 10px;
+
 }
 
 nav {
@@ -114,13 +210,7 @@ font-weight: bold;
 font-family: "Bebas Neue", sans-serif;
 font-size: 25px;
 }
-p{
-  color: black;
-  font-weight: 500;
-  font-size: 25px;
-  font-family: "Bebas Neue", sans-serif;
-  text-transform: uppercase;
-}
+
 
 
 /* --------OURWORKS-------- */
@@ -131,6 +221,11 @@ p{
   justify-content: center;
   padding: 15px;
   margin-top: 0px;
+  color: black;
+  font-weight: 500;
+  font-size: 25px;
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
 }
 h1{
   margin-bottom: 30px;
@@ -143,6 +238,11 @@ h1{
   justify-content: center;
   padding: 15px;
   margin: 0px;
+  color: black;
+  font-weight: 500;
+  font-size: 25px;
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
   
 }
 
@@ -189,5 +289,39 @@ font-weight: 500;
    .product-info{
     font-size: 25px;
    }
-     
+   .favoriteIcon,.cartIcon{
+    width: 20px;
+   }
+   .picture{
+    width: 110px;
+    height: 110px;
+   }
+   h2{
+   font-size: 15px;
+   }
+   h3{
+    font-size:12px
+   }
+   .shirtMobile{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   }
+   .btn-new {
+    font-weight: bold;
+    font-size: medium;
+    width: 25px;
+   }
+  .btn-new-add-favorite,.btn-new-add-cart {
+    padding: 5px;
+    font-weight: bold;
+    font-size: 10px;
+  }
+  .cartFavPar{
+    font-size: 10px;
+  }
+  .block-category {
+      padding: 5px;
+    }
+
 }
