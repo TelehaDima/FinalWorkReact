@@ -8,9 +8,9 @@ const Favorite = () => {
     const totalPrice = useSelector(getTotalPrice);
     return (
         <div>
-        <img className="favoriteIcon" src="https://img.icons8.com/?size=100&id=hRLYqGuFwrzX&format=png&color=000000" />
+        <img className="favoriteIcon" src="https://img.icons8.com/?size=100&id=hRLYqGuFwrzX&format=png&color=000000" alt="paint" />
             <h3>TOTAL: ${totalPrice}</h3>
-        {favoriteItems.map(favoriteItem => <FavoriteItem favoriteItem={favoriteItem} />)}
+        {favoriteItems.map(favoriteItem => <FavoriteItem key={favoriteItem} favoriteItem={favoriteItem} />)}
         </div>
     )
 }

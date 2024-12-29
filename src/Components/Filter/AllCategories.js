@@ -4,7 +4,7 @@ const AllCategories = () => {
     return (
         <div>
             {['all', 'cars', 'motorcycles', 'pickups'].
-                map(searchTerm => <Filter searchTerm={searchTerm}/>
+                map(searchTerm => <Filter key={searchTerm} searchTerm={searchTerm}/>
             )}
         
         </div>

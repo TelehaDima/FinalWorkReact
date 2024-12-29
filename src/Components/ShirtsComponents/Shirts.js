@@ -12,7 +12,7 @@ const Shirts = () => {
                     if (selectedCategory === 'all') return true;
                     return selectedCategory === shirt.searchTerm;
             })
-            .map(shirt => <Shirt shirt={shirt} />)}
+            .map(shirt => <Shirt key={shirt.id} shirt={shirt} />)}
         </div>
     )
 }
